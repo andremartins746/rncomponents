@@ -1,15 +1,12 @@
 import "react-native-gesture-handler";
-import { View, Text, Image } from "react-native";
-import {
-  SimpleLineIcons,
-  MaterialIcons,
-  MaterialCommunityIcons,
-  FontAwesome
-} from "@expo/vector-icons";
+import { View, Text, Image, ScrollView } from "react-native";
+import { Entypo, Feather } from "@expo/vector-icons";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { NavigationContainer } from "@react-navigation/native";
 import { DrawerItemList, createDrawerNavigator } from "@react-navigation/drawer";
-import User from "./assets/user.jpg";
+
+import User from "./assets/LogoIngrid.jpeg";
+
 import Backups from "./screens/Backups";
 import Categories from "./screens/Categories";
 import Contact from "./screens/Contact";
@@ -53,15 +50,15 @@ export default function App() {
                       fontSize: 22,
                       marginVertical: 6,
                       fontWeight: "bold",
-                      color: "#111"
+                      color: "#C8A787"
                     }}
-                  >Isabella Joanna</Text>
+                  >Ingrid Loyola</Text>
                   <Text
                     style={{
                       fontSize: 16,
                       color: "#111"
                     }}
-                  >Product Manager</Text>
+                  >ID: 111</Text>
                 </View>
                 <DrawerItemList {...props} />
               </SafeAreaView>
@@ -74,14 +71,14 @@ export default function App() {
             width: 250
           },
           headerStyle: {
-            backgroundColor: "#f4511e",
+            backgroundColor: "#c8a787",
           },
           headerTintColor: "#fff",
           headerTitleStyle: {
             fontWeight: "bold"
           },
           drawerLabelStyle: {
-            color: "#111"
+            color: "#0C765E"
           }
         }}
       >
@@ -91,102 +88,202 @@ export default function App() {
             drawerLabel: "Home",
             title: "Home",
             drawerIcon: () => (
-              <SimpleLineIcons name="home" size={20} color="#808080" />
+              <Entypo
+              name="home"
+              size={20}
+              color={'#0C765E'}
+            />
             )
           }}
           component={Home}
         />
+        
         <Drawer.Screen
-          name="Timer"
+          name="Mensagens"
           options={{
-            drawerLabel: "Timer",
-            title: "Timer",
+            drawerLabel: "Mensagens",
+            title: "Mensagens",
             drawerIcon: () => (
-              <MaterialIcons name="timer" size={20} color="#808080" />
+              <Entypo
+              name="message"
+              size={20}
+              color={'#0C765E'}
+            />
             )
           }}
           component={Timer}
         />
         <Drawer.Screen
-          name="Categories"
+          name="Inventario"
           options={{
-            drawerLabel: "Categories",
-            title: "Categories",
+            drawerLabel: "Meu Inventario",
+            title: "Meu Inventario",
             drawerIcon: () => (
-              <MaterialIcons name="category" size={20} color="#808080" />
+              
+              <Entypo
+              name="box"
+              size={20}
+              color={'#0C765E'}
+            />
             )
           }}
           component={Categories}
         />
         <Drawer.Screen
-          name="Customize"
+          name="vendas"
           options={{
-            drawerLabel: "Customize",
-            title: "Customize",
+            drawerLabel: "Minhas Vendas",
+            title: "Minhas Vendas",
             drawerIcon: () => (
-              <MaterialIcons name="dashboard-customize" size={20} color="#808080" />
+              <Entypo
+              name="credit"
+              size={20}
+              color={'#0C765E'}
+            />
             )
           }}
           component={Customize}
         />
         <Drawer.Screen
-          name="Settings"
+          name="HistoticoDeVendas"
           options={{
-            drawerLabel: "Settings",
-            title: "Settings",
+            drawerLabel: "Historico de Vendas",
+            title: "Historico de Vendas",
             drawerIcon: () => (
-              <SimpleLineIcons name="settings" size={20} color="#808080" />
+              <Entypo
+              name="back-in-time"
+              size={20}
+              color={'#0C765E'}
+            />
             )
           }}
           component={Settings}
         />
 
         <Drawer.Screen
-          name="Backups"
+          name="conferencia"
           options={{
-            drawerLabel: "Backups",
-            title: "Backups",
+            drawerLabel: "Conferência",
+            title: "Conferência",
             drawerIcon: () => (
-              <MaterialIcons name="backup" size={20} color="#808080" />
+              <Entypo
+              name="text-document-inverted"
+              size={20}
+              color={'#0C765E'}
+            />
             )
           }}
           component={Backups}
         />
 
-        <Drawer.Screen
-          name="Get Premium"
+        {/* <Drawer.Screen
+          name="missao"
           options={{
-            drawerLabel: "Get Premuim",
-            title: "Get Premium",
+            drawerLabel: "Missão",
+            title: "Missão",
             drawerIcon: () => (
-              <MaterialCommunityIcons name="certificate" size={20} color="#808080" />
+              <Feather
+              name="target"
+              size={20}
+              color={'#0C765E'}
+            />
             )
           }}
           component={GetPremium}
-        />
+        /> */}
         <Drawer.Screen
-          name="Rate this App"
+          name="MeusClientes"
           options={{
-            drawerLabel: "Rate this App",
-            title: "Rate this App",
+            drawerLabel: "Meus Clientes",
+            title: "Meus Clientes",
             drawerIcon: () => (
-              <FontAwesome name="star" size={20} color="#808080" />
+              <Entypo
+              name="users"
+              size={20}
+              color={'#0C765E'}
+            />
             )
           }}
           component={RateApp}
         />
 
         <Drawer.Screen
-          name="Contact"
+          name="garantia"
           options={{
-            drawerLabel: "Contact",
-            title: "Contact",
+            drawerLabel: "garantia",
+            title: "garantia",
             drawerIcon: () => (
-              <MaterialCommunityIcons name="message-alert-outline" size={20} color="#808080" />
+              <Feather
+              name="tool"
+              size={20}
+              color={'#0C765E'}
+            />
             )
           }}
           component={Contact}
         />
+        <Drawer.Screen
+          name="Assistencia"
+          options={{
+            drawerLabel: "Assistência",
+            title: "Assistência",
+            drawerIcon: () => (
+              <Entypo
+              name="shield"
+              size={20}
+              color={'#0C765E'}
+            />
+            )
+          }}
+          component={Contact}
+        />
+        <Drawer.Screen
+          name="telefone"
+          options={{
+            drawerLabel: "Telefone",
+            title: "Telefone",
+            drawerIcon: () => (
+              <Entypo
+              name="phone"
+              size={20}
+              color={'#0C765E'}
+            />
+            )
+          }}
+          component={Contact}
+        />
+        <Drawer.Screen
+          name="minhaConta"
+          options={{
+            drawerLabel: "Minha Conta",
+            title: "Minha Conta",
+            drawerIcon: () => (
+              <Entypo
+              name="user"
+              size={20}
+              color={'#0C765E'}
+            />
+            )
+          }}
+          component={Contact}
+        />
+        <Drawer.Screen
+          name="sair"
+          options={{
+            drawerLabel: "Sair",
+            title: "Sair",
+            drawerIcon: () => (
+              <Entypo
+              name="log-out"
+              size={20}
+              color={'#0C765E'}
+            />
+            )
+          }}
+          component={Contact}
+        />
+        
+        
       </Drawer.Navigator>
     </NavigationContainer>
   );
